@@ -34,10 +34,10 @@
     echo "El resultado es " . $resultado . "<br>";
     //aqui ignoran las mayus
 
-    if($resultado){
-        echo "El resultado no coiciden <br>";
-    }else{
+    if(!$resultado){
         echo "El resultado si coiciden <br>";
+    }else{
+        echo "El resultado no coiciden <br>";
     }
 
     ?>
