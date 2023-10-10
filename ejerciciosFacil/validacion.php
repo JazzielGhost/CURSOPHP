@@ -46,7 +46,7 @@
 			echo "cu&iacute;date";
 			
 		}
-	}*/
+	}
 	if(isset($_POST["enviando"])){
 		$contra = $_POST["contra"];
 		$nombre = $_POST["nombre_usuario"];
@@ -54,5 +54,39 @@
 		$resultado = $nombre=="Jazziel" && $contra=="1234" ? "Puedes Acceder" : "No puedes acceder";
 		echo $resultado;
 	}
-
+	if(isset($_POST["enviando"])){
+		$nombre = $_POST["nombre_usuario"];
+		$contra = $_POST["contra_surario"];
+		switch (true):
+			case $nombre === "Jazziel" && $contra === "1234":
+				echo "usuario autorizado. Hola Jazziel";
+				break;
+			case $nombre === "Maria" && $contra === "12345":
+				echo "usuario autorizado. Hola Maria";
+				break;
+			case $nombre === "Pedro" && $contra === "123456":
+				echo "usuario autorizado. Hola Pedro";
+				break;
+			default:
+				echo "usuario no autorizado...";
+		endswitch;
+	}*/
+	if (isset($_POST["enviando"])) {
+		$nombre = $_POST["nombre_usuario"];
+		$edad = $_POST["edad_usuario"];
+		switch (true) {
+			case $edad<=18:
+				echo "eres menor de edad";
+				break;
+			case $edad<=40:
+				echo "eres joven";
+				break;	
+			case $edad<=65:
+				echo "eres maduro";
+				break;
+			default:
+				echo "cu&iacute;date";
+				break;
+		}
+	}
   ?>
