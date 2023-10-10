@@ -33,7 +33,7 @@
         echo "<p class='no_validado'>No puedes entrar </p>";
 
       }
-    }*/
+    }
 	if(isset($_POST["enviando"])){
 		$edad = $_POST["edad_usuario"];
 		if($edad <= 18){
@@ -46,7 +46,13 @@
 			echo "cu&iacute;date";
 			
 		}
-	}
+	}*/
+	if(isset($_POST["enviando"])){
+		$contra = $_POST["contra"];
+		$nombre = $_POST["nombre_usuario"];
 
+		$resultado = $nombre=="Jazziel" && $contra=="1234" ? "Puedes Acceder" : "No puedes acceder";
+		echo $resultado;
+	}
 
   ?>
