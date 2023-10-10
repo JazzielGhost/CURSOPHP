@@ -7,7 +7,7 @@
 </head>
 <body>
     <p>&nbsp;</p>
-    <form name="form1" method="POST" action="/ejerciciosFacil/calculadora.php">
+    <form name="form1" method="POST" action="">
         <p>
         <label for="num1"></label>
         <input type="text" name="num1" id="num1">
@@ -29,5 +29,22 @@
         </p>
     </form>
     <p>&nbsp;</p>
+
+    <?php
+        include("calculadora.php");
+        
+        if(isset($_POST["button"])){
+            $numero1=$_POST["num1"];
+            $numero2=$_POST["num2"];
+            $operacion=$_POST["operacion"];
+            
+            calcular($operacion);
+        }
+            
+
+
+
+
+    ?>
 </body>
 </html>
