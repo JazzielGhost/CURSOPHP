@@ -24,7 +24,7 @@
 
 </style>
 <?php
-    if(isset($_POST["enviando"])){
+	/*if(isset($_POST["enviando"])){
       $usuario = $_POST["nombre_usuario"];
       $edad = $_POST["edad_usuario"];
       if($usuario=="Juan" && $edad >= 18){
@@ -33,5 +33,20 @@
         echo "<p class='no_validado'>No puedes entrar </p>";
 
       }
-    }
+    }*/
+	if(isset($_POST["enviando"])){
+		$edad = $_POST["edad_usuario"];
+		if($edad <= 18){
+			echo "eres menor de edad";
+		}else if($edad<=40){
+			echo "eres joven";
+		}else if($edad<=65){
+			echo "eres maduro";
+		}else{
+			echo "cu&iacute;date";
+			
+		}
+	}
+
+
   ?>
