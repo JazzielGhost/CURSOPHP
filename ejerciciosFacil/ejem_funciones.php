@@ -30,6 +30,30 @@
         return $resultado;
     }
     echo frase_mayuscula("hola mundo");
+    
+    echo "<br> <br>";
+
+    function incrementa(&$num){
+        $num++;
+        return $num;
+    }
+    $numero = 5;
+    echo incrementa($numero) . "<br>";
+    echo $numero;
+
+    echo "<br> <br>";
+
+    function cambia_mayus(&$param){
+        $param=strtolower($param);
+        $param=ucwords($param);
+        return $param;
+    }
+
+    $cadena = "hOlA muNdo";
+    echo cambia_mayus($cadena). "<br>";
+
+    echo $cadena;
+
     ?>
 </body>
 </html>
