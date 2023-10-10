@@ -13,6 +13,13 @@
             echo "<br>";
             $i++;
         }
+        echo "<br>"; 
+        $i = 0;   
+        do {
+            echo $i;
+            echo "<br>";
+            $i++;
+        } while ($i <= 10);
     ?>
 </body>
 </html>
