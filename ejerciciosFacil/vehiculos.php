@@ -13,13 +13,13 @@
             $this -> motor = 1600;
         }
         function arrancar(){
-            echo "El coche arranca <br>";
+            echo "Estoy arrancando <br>";
         }
         function girar(){
-            echo "El coche gira <br>";
+            echo "Estoy girando <br>";
         }
         function frenar(){
-            echo "El coche frena <br>";
+            echo "Estoy frenando <br>";
         }
         function establece_color($color_coche, $nombre_coche){
             $this -> color = $color_coche;
@@ -36,25 +36,20 @@
     //$ferrari -> girar();
     //echo $ferrari -> ruedas;
     */
-    class Camion{
-        public  int $ruedas;
-        public string $color;
-        public int $motor;
+    class Camion extends Coche{
         public function __construct(){//metodo constructor
             $this -> ruedas = 8;
             $this -> color = "Gris";
             $this -> motor = 2600;
         }
+        function establece_color($color_camion, $nombre_camion){
+            $this -> color = $color_camion;
+            echo "El {$nombre_camion} tiene el color {$this -> color} <br>";
+        }
         function arrancar(){
-            echo "El coche arranca <br>";
+            parent::arrancar();
+            echo "El camion arranca <br>";
         }
-        function girar(){
-            echo "El coche gira <br>";
-        }
-        function frenar(){
-            echo "El coche frena <br>";
-        }
-    
     }
 
 ?>

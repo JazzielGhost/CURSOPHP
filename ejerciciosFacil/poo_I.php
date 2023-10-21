@@ -10,11 +10,14 @@
 <?php
     include "vehiculos.php";
     $mazda = new Coche();
-
     $pegaso = new Camion();
 
     echo "El mazda tiene " . $mazda->ruedas . " ruedas <br>";
     echo "El pegaso tiene " . $pegaso->ruedas . " ruedas <br>";
+
+    $pegaso -> frenar();
+    $pegaso -> arrancar();
+
 
 ?>  
     
