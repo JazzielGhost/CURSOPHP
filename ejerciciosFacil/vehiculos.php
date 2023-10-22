@@ -1,10 +1,6 @@
 <?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    
     class Coche{
-        public  int $ruedas;
+        private  int $ruedas;
         public string $color;
         public int $motor;
         public function __construct(){//metodo constructor
