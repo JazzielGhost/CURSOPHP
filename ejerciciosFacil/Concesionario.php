@@ -4,7 +4,7 @@
 		
 		private $precio_base;
 		
-		static $ayuda=4500;
+		private static $ayuda=0;
 		
 				
 		function __construct($gama){
@@ -30,7 +30,14 @@
 		}// fin constructor
 		
 		
-		
+		static function descuento_gobierno(){
+
+			if (date("m-d-y")>="11-01-23"){ 
+				self::$ayuda=4500;
+			}
+
+			
+		}// fin descuento
 		
 		function climatizador(){		
 			
