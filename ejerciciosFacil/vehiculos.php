@@ -1,13 +1,21 @@
 <?php
     class Coche{
-        private  int $ruedas;
+        protected  int $ruedas;
         public string $color;
-        public int $motor;
+        protected int $motor;
         public function __construct(){//metodo constructor
             $this -> ruedas = 4;
             $this -> color = "";
             $this -> motor = 1600;
         }
+
+        function get_ruedas(){
+            return $this -> ruedas;
+        }
+        function get_motor(){
+            return $this -> motor;
+        }
+
         function arrancar(){
             echo "Estoy arrancando <br>";
         }
@@ -17,7 +25,7 @@
         function frenar(){
             echo "Estoy frenando <br>";
         }
-        function establece_color($color_coche, $nombre_coche){
+        function set_color($color_coche, $nombre_coche){
             $this -> color = $color_coche;
             echo "El {$nombre_coche} tiene el color {$this -> color} <br>";
         }
