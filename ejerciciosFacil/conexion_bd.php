@@ -10,7 +10,6 @@
         width:50%;
         border: 1px solid black;
         margin: auto;
-
     }
 </style>
 <body>
@@ -19,8 +18,8 @@
     require 'datos_conexion.php';
 
     $consulta = "SELECT * FROM ARTICULOS where SECCIàN = 'DEPORTE'";
+/*  mysqli_fetch_row = array indexado
     $resultados = mysqli_query($conexion, $consulta);
-
     while($fila = mysqli_fetch_row($resultados)){
         echo "<table> <tr> <td>";
             echo "<td>" . $fila[0] . "  </td>";
@@ -38,7 +37,26 @@
     }
 
     mysqli_close($conexion);
+*/
 
+    $resultados = mysqli_query($conexion, $consulta);
+    while($fila = mysqli_fetch_array($resultados, MYSQLI_ASSOC)){
+        echo "<table> <tr> <td>";
+            echo "<td>" . $fila['SECCIàN'] . "  </td>";
+            
+            echo "<td>" . $fila['FECHA'] . "  </td>";
+
+            echo "<td>" . $fila['NOMBRE ARTÖCULO'] . "  </td>";
+
+            echo "<td>" . $fila['PRECIO'] . "  </td>";
+
+        
+            echo "<td>" . $fila['PAÖS DE ORIGEN'] . "  </td>  </tr> </table>";
+
+        echo "<br>";
+        echo "<br>";
+    }
+    
     ?>
 </body>
 </html>
