@@ -5,37 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    table{
+        width:50%;
+        border: 1px solid black;
+        margin: auto;
+
+    }
+</style>
 <body>
     <?php
-    $db_host="localhost";
-    $db_user="root";
-    $db_pass="jaziel1218*[=}*";
-    $db_name="CURSO_PHP_MYSQL";
 
-    $conexion = mysqli_connect($db_host, $db_user, $db_pass);
+    require 'datos_conexion.php';
 
-    if(mysqli_connect_errno()){
-        echo "Fallo al conectar con la base de datos";
-        exit(); 
-    }
-
-    mysqli_select_db($conexion, $db_name) or die ("No se encuentra la base de datos");
-
-    //mysqli_set_charset($conexion, "utf8");
-
-    $consulta = "SELECT * FROM USERS";
+    $consulta = "SELECT * FROM ARTICULOS where SECCIàN = 'DEPORTE'";
     $resultados = mysqli_query($conexion, $consulta);
 
     while($fila = mysqli_fetch_row($resultados)){
+        echo "<table> <tr> <td>";
+            echo "<td>" . $fila[0] . "  </td>";
+            
+            echo "<td>" . $fila[1] . "  </td>";
+        
+            echo "<td>" . $fila[2] . "  </td>";
+        
+            echo "<td>" . $fila[3] . "  </td>";
 
-        echo $fila[0] . " ";
-        
-        echo $fila[1] . " ";
-    
-        echo $fila[2] . " ";
-    
-        echo $fila[3] . " ";
-        
+            echo "<td>" . $fila[4] . "  </td> </tr> </table>";
+
+        echo "<br>";
         echo "<br>";
     }
 
