@@ -10,10 +10,5 @@
         <label for="">Buscar: <input type="text" name="buscar"> </label>
         <input type="submit" value="Enviar">
     </form>
-
-    <?php
-
-    
-    ?>
 </body>
 </html>
