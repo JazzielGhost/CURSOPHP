@@ -14,4 +14,3 @@
     mysqli_select_db($conexion, $db_name) or die ("No se encuentra la base de datos");
 
     //mysqli_set_charset($conexion, "utf8");
-?>
