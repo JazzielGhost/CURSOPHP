@@ -4,7 +4,11 @@ $busqueda = $_GET['buscar'];
 
 require 'datos_conexion.php';
 
-$consulta = "SELECT * FROM USERS where email like '%$busqueda%'";
+//$consulta = "SELECT * FROM USERS where email like '%$busqueda%'";
+
+$consulta = "SELECT * FROM USERS where email = '$busqueda'";
+
+echo "$consulta <br>";
 
 $resultados = mysqli_query($conexion, $consulta);
 if(mysqli_connect_errno()){
