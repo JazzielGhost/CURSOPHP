@@ -1,7 +1,8 @@
 <?php
     require "devuelve_productos.php";
+    $pais = $_GET['pais'];
     $productos = new DevuelveProductos();
-    $array_productos = $productos->get_productos();
+    $array_productos = $productos->get_productos($pais);
 ?>
 
 <!DOCTYPE html>
