@@ -113,6 +113,22 @@
         </table>
     </footer>
 
+    <?php
+
+    if ($autenticado == true || isset($_COOKIE["nombre_usuario"])) {
+        include("zona_registrados.html");
+    }
+
+    if (isset($_COOKIE["nombre_usuario"])) {
+        echo "Hola " . $_COOKIE["nombre_usuario"] . "!";
+    }else if($autenticado == true){
+        echo "Hola " . $_POST["usuario"] . "!";
+    }
+
+
+    ?>
+
+
 </body>
 
 </html>
