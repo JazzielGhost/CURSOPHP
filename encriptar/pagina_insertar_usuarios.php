@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptar</title>
 </head>
+
 <body>
     <?php
         $usuario = $_POST['usuario'];
         $password = $_POST['password'];
 
-        $pass_cifrado = password_hash($password, PASSWORD_DEFAULT);
+        $pass_cifrado = password_hash($password, PASSWORD_DEFAULT, array('cost' => 12));
 
         try {
             $base = new PDO("mysql:host=localhost:3307; dbname=CURSO_PHP_MYSQL", "root", "ReyjazielGod1218*");
@@ -30,7 +32,9 @@
         } finally {
             $base = null;
         }
-    
+   
+
     ?>
 </body>
+
 </html>
