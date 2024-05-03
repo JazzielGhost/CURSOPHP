@@ -15,7 +15,7 @@
   //$conexion=$base->query("SELECT * FROM DATOS_USUARIOS");
   //$registros=$conexion->fetchAll(PDO::FETCH_OBJ);
 
-  $registros=$bae->query("SELECT * FROM DATOS_USUARIOS")->fetchAll(PDO::FETCH_OBJ);
+  $registros=$base->query("SELECT * FROM DATOS_USUARIOS")->fetchAll(PDO::FETCH_OBJ);
 
 ?>
 
@@ -32,15 +32,21 @@
       <td class="sin">&nbsp;</td>
     </tr> 
    
-   	<tr>
-      <td> </td>
-      <td></td>
-      <td></td>
-      <td></td>
- 
-      <td class="bot"><input type='button' name='del' id='del' value='Borrar'></td>
-      <td class='bot'><input type='button' name='up' id='up' value='Actualizar'></a></td>
-    </tr>       
+
+    <?php foreach($registros as $persona): ?>
+      <tr>
+        <td><?php echo $persona->id ?></td>
+        <td><?php echo $persona->nombre ?></td>
+        <td><?php echo $persona->apellido ?></td>
+        <td><?php echo $persona->direccion ?></td>
+  
+        <td class="bot"><a href="borrar.php?id=<?php echo $persona->id ?>"><input type='button' name='del' id='del' value='Borrar'></a></td>
+        <td class='bot'><input type='button' name='up' id='up' value='Actualizar'></td>
+      </tr> 
+    <?php endforeach; ?>
+
+
+
 	<tr>
 	<td></td>
       <td><input type='text' name='Nom' size='10' class='centrado'></td>
